@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photography Studio Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fefcf9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .services-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .services-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #5b2c2c;
+    }
+
+    .services-section p {
+      font-size: 16px;
+      margin-bottom: 40px;
+      color: #666;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-card img {
+      height: 50px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #3a1e1e;
+    }
+
+    .service-card p {
+      font-size: 15px;
+      color: #444;
+      margin: 5px 0;
+    }
+
+    .book-btn {
+      margin-top: 15px;
+      display: inline-block;
+      background-color: #8b6f47;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+     a {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #7a3f03;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+a:hover {
+  background-color: #5a2e01;
+}
+
+    .book-btn:hover {
+      background-color: #5c4225;
+    }
+  </style>
+</head>
+<body>
+  <body>
+  <div style="background: #e9e8e6; padding: 10px 10px; display: flex; align-items: center; justify-content: space-between;">
+    <a href="https://www.instagram.com/mithunamadhusoodanan" target="_blank" style="text-decoration: none; background-color: #939090; font-weight: bold; display: flex; align-items: center;">
+      <img src="https://img.icons8.com/ios-filled/24/7a3f03/instagram-new.png" alt="Instagram" style="margin-right: 8px;">
+      Follow us on Instagram
+    </a>
+  </div>
+
+<a href="{% url 'home' %}">back to home</a>
+
+<section class="services-section" id="services">
+  <h2>Our Services</h2>
+  <p>Creative and professional photography tailored to your needs.</p>
+
+  <div class="services-grid">
+
+    <div class="service-card" data-aos="fade-up">
+      <img src="https://img.icons8.com/ios/50/portrait.png" alt="Portrait">
+      <h3>Portrait Photography</h3>
+      <p>Individual and family portraits with soul.</p>
+      <p><strong>₹1,500/hr</strong> · 1–2 hrs</p>
+      <p>Includes 15 edited photos</p>
+      <a href="contact.html" class="book-btn">Book Now</a>
+    </div>
+
+    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+      <img src="https://img.icons8.com/ios/50/product.png" alt="Product">
+      <h3>Product Photography</h3>
+      <p>High-quality product shots.</p>
+      <p><strong>₹2,000</strong> · 2 hrs</p>
+      <p>10 items, styled backgrounds</p>
+      <a href="contact.html" class="book-btn">Book Now</a>
+    </div>
+
+    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+      <img src="https://img.icons8.com/ios/50/conference.png" alt="Event">
+      <h3>Event Coverage</h3>
+      <p>Birthdays, school, corporate events.</p>
+      <p><strong>₹3,500/event</strong> · 4 hrs</p>
+      <p>Includes digital album</p>
+      <a href="contact.html" class="book-btn">Book Now</a>
+    </div>
+
+    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+      <img src="https://img.icons8.com/ios/50/baby.png" alt="Baby">
+      <h3>Baby & Kids Photography</h3>
+      <p>Candid childhood memories.</p>
+      <p><strong>₹2,000</strong> · 1–1.5 hrs</p>
+      <p>Props included, 10 edits</p>
+      <a href="contact.html" class="book-btn">Book Now</a>
+    </div>
+
+    <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+      <img src="https://img.icons8.com/ios/50/sunrise.png" alt="Outdoor">
+      <h3>Outdoor Shoots</h3>
+      <p>Natural-light outdoor portraits.</p>
+      <p><strong>₹2,500</strong> · 1.5 hrs</p>
+      <p>20 edited photos, travel free</p>
+      <a href="contact.html" class="book-btn">Book Now</a>
+    </div>
+
+  </div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    offset: 120,
+  });
+</script>
+
+</body>
+</html>

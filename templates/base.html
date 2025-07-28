@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>STELLAR – Intimate Photography</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #3a2f2f;
+      background-color: #9f9389;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: #3a1e1e;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #8d4e07;
+      font-size: 16px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #642d18;
+    }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.9)),
+                  url('hero.jpeg.jpeg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 46px;
+      margin-bottom: 10px;
+      color: #2b1a1a;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #555;
+      height: 30px;
+      overflow: hidden;
+      border-right: .15em solid #b76e50;
+      white-space: nowrap;
+      margin: 0 auto 30px;
+      animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #b76e50; }
+    }
+
+    .cta-btn {
+      padding: 12px 28px;
+      font-size: 16px;
+      background-color: #b76e50;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #a1563a;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 25px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header data-aos="fade-down">
+    <div class="logo">STELLAR</div>
+    <nav>
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'work' %}">Our Work</a>
+      <a href="{% url 'services' %}">Services</a>
+      <a href="{% url 'contact' %}">Contact</a>
+      <a href= "{% url 'bookinglog' %}">Bookinglog</a>
+    </nav>
+  </header>
+
+ {% block content %}
+
+ {% endblock %}
+
+  <!-- AOS Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Wedding</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #b8b5b5, #fff1f2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .form-container {
+      background-color: rgb(174, 169, 169);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 400px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #77400a;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #1c1919;
+    }
+
+    input, textarea {
+      width: 90%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+      font-size: 15px;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #f0c9d2;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(175, 156, 161, 0.2);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #b3abad;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #978c8f;
+    }
+
+   
+      a {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #7a3f03;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+a:hover {
+  background-color: #5a2e01;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Book Your Event</h2>
+    <form action="#" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="date">Event Date</label>
+        <input type="date" id="date" name="event_date" required />
+      </div> -->
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Tell us more about your event..." required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location Link</label>
+        <input type="url" id="location" name="location" placeholder="Google Maps link" />
+      </div>
+
+      <button type="submit">Submit Booking</button>
+    
+    </form>
+    <a href="{% url 'home' %}" class="back-link">&larr; Back to Home</a>
+  </div>
+
+</body>
+</html>

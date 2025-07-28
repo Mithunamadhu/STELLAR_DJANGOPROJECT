@@ -1,0 +1,42 @@
+.our-work {
+  background-color: #fff8ed;
+  padding: 3rem 1rem;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.our-work h3 {
+  font-size: 2.2rem;
+  color: #8b6f47;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.our-work .description {
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.our-work .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.our-work .gallery img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.our-work .gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+}
