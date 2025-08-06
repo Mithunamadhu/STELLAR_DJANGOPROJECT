@@ -30,6 +30,7 @@
   </style>
 </head>
 <body>
+  <a href="{% url 'home' %}" class="back-link">&larr; Back to Home</a>
   <h2>📋 All Booked Events</h2>
   <table>
     <tr>
@@ -46,7 +47,7 @@
       <td>{{ booking.email }}</td>
       
       <td>{{ booking.message }}</td>
-      <td>{{ booking.location_link }}</td>
+      <td>{{ booking.location }}</td>
       <td>{{ booking.submitted_at }}</td>
     </tr>
     {% endfor %}

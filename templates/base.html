@@ -138,12 +138,25 @@
   <header data-aos="fade-down">
     <div class="logo">STELLAR</div>
     <nav>
-      <a href="{% url 'home' %}">Home</a>
-      <a href="{% url 'work' %}">Our Work</a>
-      <a href="{% url 'services' %}">Services</a>
-      <a href="{% url 'contact' %}">Contact</a>
-      <a href= "{% url 'bookinglog' %}">Bookinglog</a>
-    </nav>
+  <a href="{% url 'home' %}">Home</a>
+  <a href="{% url 'work' %}">Our Work</a>
+  <a href="{% url 'services' %}">Services</a>
+  <a href="{% url 'contact' %}">Contact</a>
+  <a href="{% url 'bookinglog' %}">Bookinglog</a>
+    {% if user.is_authenticated %}
+  <form action="{% url 'logout' %}" method="post" style="display:inline;">
+    {% csrf_token %}
+    <button style="background-color: #b76e50; margin-left: 2px; color: white; border-radius: 10px; width: 120px; height: 30px;">
+      Logout ({{ user.username }})
+    </button>
+  </form>
+{% else %}
+  <a href="{% url 'login' %}">Login</a>
+{% endif %}
+
+
+</nav>
+
   </header>
 
  {% block content %}

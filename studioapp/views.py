@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from .models import Contact, Work
 from django.contrib.auth import authenticate, login
@@ -16,7 +17,28 @@ def work(request):
 
 def service(request):
     return render(request, 'service.html')
+# def signup_view(request):
+
+#     return render(request, 'signup.html')
+
 def signup_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        password1 = request.POST['password1']
+
+        if password != password1:
+            messages.error(request, "Passwords do not match.")
+            return redirect('signup')
+
+        if User.objects.filter(username=username).exists():
+            messages.error(request, "Username already taken.")
+            return redirect('signup')
+
+        user = User.objects.create_user(username=username, password=password)
+        messages.success(request, "Account created successfully.")
+        return redirect('login')
+
     return render(request, 'signup.html')
 def contact(request):
     if request.method == 'POST':
@@ -63,3 +85,10 @@ def Custom_login(request):
             return redirect('home')
         messages.error(request, 'Invalid credentials')
     return render(request, 'login.html')
+
+
+from django.contrib.auth.views import LogoutView
+
+class CustomLogoutView(LogoutView):
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
